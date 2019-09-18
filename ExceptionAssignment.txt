@@ -1,0 +1,175 @@
+1.	
+import java.util.Scanner;
+
+class MyArithException extends Exception
+{
+	public MyArithException(String msg)
+	{
+		super(msg);
+	}
+}
+
+class calculator1
+{
+	int cald(int num) throws MyArithException
+	{
+		if(num<=0) 
+		{
+			throw new MyArithException("Negative or Zero Not Allowed");
+		}
+		return 2*num;
+	}
+}
+
+public class MyCalcApp1 {
+
+	public static void main(String[] args)
+	{
+		int result=0;
+		Scanner s=new Scanner(System.in);
+		int num=s.nextInt();
+		calculator1 c=new calculator1();
+		try
+		{
+			result=c.cald(num);
+			System.out.println(result);
+		}
+		catch(MyArithException msg)
+		{
+			System.out.println(msg);
+		}
+
+	}
+
+}
+
+
+2.
+package Course;
+
+//packge Course;
+class Dac
+{
+	public void term1()
+	{
+		System.out.println("in term1");
+	}
+	public void term2()
+	{
+		System.out.println("in term2");
+	}
+}
+
+class Predac 
+{
+	public void cet()
+	{
+		System.out.println("in Predac");
+	}
+}
+
+class Basic 
+{
+
+	public void finaltest()
+	{
+		System.out.println("in Basic");
+	}
+}
+
+public class VitaApp
+{
+
+	public static void main(String[] args) 
+	{
+		Dac d=new Dac();
+		d.term1();
+		d.term1();
+		
+		Predac p=new Predac();
+		p.cet();
+		
+		Basic b=new Basic();
+		b.finaltest();
+		
+	}
+
+}
+
+
+
+3.
+package Course;
+
+class Item
+{
+
+	String itemid;
+	String name;
+	int cost;
+	public Item(String itemid, String name, int cost) 
+	{
+		super();
+		this.itemid = itemid;
+		this.name = name;
+		this.cost = cost;
+	}
+	
+	public void display()
+	{
+		System.out.println("Item Id:"+itemid);//("Item Id:"+itemid+" ");
+		System.out.println("Item Name:"+name);
+		System.out.println("Item Cost:"+cost);
+	}
+	
+}
+public class Demo1
+{
+
+	public static void main(String[] args) 
+	{
+		Item i=new Item("ABC","Gift",12);
+		i.display();
+	}
+
+}
+
+
+4.
+4.
+abstract class game1
+{
+	abstract public void play();	
+} 
+class football1 extends game1
+{
+	    public void play()
+	 {
+	System.out.println("football");
+	 }
+}
+class cricket1 extends game1
+{
+	 	public void play() 
+	 	 {
+	 	System.out.println("cricket");
+	 	 }
+ }
+class tennis extends game1
+{
+	 	public void play()
+	    {
+	 		System.out.println("Tennis");
+	 	}
+}
+public class GamesDemo1 
+{
+	public static void main(String args[])
+	{
+		cricket1 c=new cricket1();
+		c.play();	 
+	}
+	
+}
+	 	
+

@@ -1,0 +1,275 @@
+//1.
+ class vehicle
+ {
+	 public void start()
+	 {
+		 System.out.println("vehicle name");
+	 }
+ }
+ class fourwheller extends vehicle
+ {
+	 public void start()
+	 {
+		 System.out.println("fourwheller type");
+	 }
+ }
+public class demo2
+{
+	public static void main(String args[])
+	{
+		vehicle f=new vehicle();
+		f.start();
+	}
+}
+
+
+//2.
+
+ */class vehicle
+ {
+	 public void start()
+	 {
+		 System.out.println("vehicle name");
+	 }
+ }
+ class fourwheller extends vehicle
+ {
+	 public void start()
+	 {
+		 System.out.println("fourwheller type");
+	 }
+ }
+public class demo2
+{
+	public static void main(String args[])
+	{
+		vehicle f=new vehicle();
+		f.start();
+	}
+
+}
+
+
+//3.
+
+class A
+{
+	
+	int num1=10;
+	void disp()
+	{
+		System.out.println("num1");
+	}
+	A(int num1)
+	{
+		System.out.println("A");
+	}
+}
+class B extends A
+{
+	int num2=20;
+	void disp()
+	
+	{
+		System.out.println("num2");
+	}
+	B(int num2)
+	{
+		super(5);
+		System.out.println("B");
+	}
+}
+class C extends A
+{
+	int num3=30;
+	void disp()
+	
+	{
+		System.out.println("num3");
+	}
+	C(int num3)
+	{
+		super(10);
+		System.out.println("C");
+	}
+}
+public class demo3
+{
+    public static void main(String args[])
+    {
+    	B b= new B(4);
+    	C c= new C(5);
+    	//a.disp();
+    	b.disp();
+    	c.disp();
+    }
+
+}
+  
+
+//5.
+abstract class shape
+{
+	abstract void draw()
+	{
+		System.out.println();
+	}
+	Top1()
+	{
+		
+	}
+		
+}
+	
+class Trangle extends shape
+	{
+	void draw()
+
+	{
+	System.out.println("print trangle");
+	}
+}
+class Polygon extends shape
+{
+	void draw()
+
+	{
+	System.out.println("print polygon");
+    }
+}
+class Circle extends shape
+{
+	void draw()
+
+
+	{
+	System.out.println("print circle");
+    }
+}
+public class demo3
+{
+
+	public static void main(String args[])
+	{
+	 shape arr[]= new shape[3];
+   	arr[0]=new Trangle();
+	 arr[1]=new Polygon();
+	 arr[2]=new Circle();
+	 for(int i=0;i<3;i++)
+		 arr[i].draw();
+	}
+}
+
+
+6.//ASK
+interface A
+{
+	void disp1()
+}
+interface B extends A
+{
+	void disp2()
+}
+class C implements B
+{
+	void disp()
+	{
+		System.out.println("abhi");
+	}
+	public void disp1()
+	{
+		System.out.println("abhi");
+	}
+	public void disp2()
+	{
+		System.out.println("abhi");
+	}
+}
+class demo3
+{
+	public static void main(String args[])
+	{
+		C c=new C();
+		c.disp1();
+		c.disp2();
+	}
+}
+
+
+8.
+class base1
+{ 
+		base1(int n)
+		{
+			
+		}
+}
+class sub1 extends base1
+{
+	sub1()
+	{	
+		super(10);
+		System.out.println("default");
+	}
+	sub1(int k)
+	{	
+		super(20);
+		System.out.println(k);
+	}
+	sub1(int k,int l)
+	{	
+		super(30);
+		System.out.println(k+"\t"+l);
+	}	
+}
+class demo3
+{
+	public static void main(String args[])
+	{
+		base1 b=new sub1();
+		//sub1 s= new sub1();
+		sub1 s1=new sub1(10);
+		sub1 s2=new sub1(20,30);
+	}
+}
+
+//9.
+interface game
+{
+	abstract void play();
+}
+class cricket implements game
+{
+	public void play()
+	{
+		System.out.println("cricket");
+	}
+}
+class football implements game
+{
+
+	public void play()
+	{
+		System.out.println("football");
+	}
+}
+class tenise implements game
+{
+
+	public void play()
+	{
+		System.out.println("tenise");
+	}
+}
+class demo3
+{	public static void perform(game ref)
+	{
+		ref.play();
+	}
+	public static void main(String args[])
+	{
+		perform(new cricket());
+		perform(new football());
+		perform(new tenise());
+	}
+}
